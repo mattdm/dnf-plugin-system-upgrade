@@ -1,6 +1,6 @@
 Name:       dnf-plugin-system-upgrade
 Version:    0.4.1
-Release:    1%{?dist}
+Release:    1.1%{?dist}
 Summary:    System Upgrade plugin for DNF
 Group:      System Environment/Base
 License:    GPLv2+
@@ -30,8 +30,10 @@ BuildArch: noarch
 BuildRequires: pkgconfig systemd gettext
 
 %description
-System Upgrade plugin for DNF.
-This package provides the systemd services required to make the upgrade work.
+The Fedora Upgrade tool (a system upgrade plugin for DNF).
+
+This package provides the systemd services required to make the upgrade
+work.
 
 %package -n python3-%{name}
 %{?python_provide:%python_provide python3-%{name}}
@@ -109,6 +111,9 @@ fi
 %{python_sitelib}/dnf-plugins/system_upgrade.py*
 
 %changelog
+* Fri Oct  2 2015 Matthew Miller <mattdm@fedoraproject.org> 0.4.1-1.1
+- make description more fedupy.
+
 * Tue Sep 15 2015 Will Woods <wwoods@redhat.com> 0.4.1-1
 - Fix `dnf system-upgrade clean` (rhbz#1262145)
 - Fix duplicate messages in plymouth 'details' output (github#13)
