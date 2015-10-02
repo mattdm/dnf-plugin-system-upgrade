@@ -25,7 +25,7 @@ SERVICE = dnf-system-upgrade.service
 PLUGIN = system_upgrade.py
 
 MANDIR ?= /usr/share/man
-MANPAGE = doc/dnf.plugin.system-upgrade.8
+MANPAGE = doc/fedup.8
 
 build: $(MSGFILES)
 
@@ -63,7 +63,7 @@ install-lang: $(MSGFILES)
 install-man: $(MANPAGE)
 	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man8
 	$(INSTALL) -m644 $(MANPAGE) $(DESTDIR)$(MANDIR)/man8
-	$(LN) -sf $(notdir $(MANPAGE)) $(DESTDIR)$(MANDIR)/man8/fedup.8
+	$(LN) -sf $(notdir $(MANPAGE)) $(DESTDIR)$(MANDIR)/man8/dnf.plugin.system-upgrade.8
 
 clean:
 	rm -rf *.py[co] __pycache__ tests/*.py[co] tests/__pycache__ \
